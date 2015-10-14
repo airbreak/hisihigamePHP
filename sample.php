@@ -122,7 +122,7 @@ $signPackage = $jssdk->GetSignPackage();
       type: 'link', // 分享类型,music、video或link，不填默认为link
       dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
 	  trigger:function(){
-		this.desc='weixin';
+		this.desc= '噢耶！我达到了,我得到了 '+ window.shareGameResults.levelName + ' 等级，获得了" ' + window.shareGameResults.scorcesName + '" 的称号，不服来solo！！！';
 	  },
       success: function () {
 		alert(game);
