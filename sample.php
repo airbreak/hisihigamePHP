@@ -121,6 +121,9 @@ $signPackage = $jssdk->GetSignPackage();
       imgUrl: 'http://wechat.hisihi.com/Sample/area/images/home/shareLogo.png', // 分享图标
       type: 'link', // 分享类型,music、video或link，不填默认为link
       dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+	  trigger:function(){
+		this.desc='weixin';
+	  },
       success: function () {
 		alert(game);
 		alert(game.totalScores);
