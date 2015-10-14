@@ -116,9 +116,9 @@ $signPackage = $jssdk->GetSignPackage();
     // 在这里调用 APIs
     wx.onMenuShareAppMessage({
       title: '轰炸设计师', // 分享标题
-	  desc: '噢耶！我达到了'+window.shareGameResults.levelName+'等级，获得了 "'+window.shareGameResults.scorcesName + '"的称号，不服来solo！！！',// 分享描述
+      desc: '噢耶！我达到了,我得到了 '+ window.shareGameResults.levelName + ' 等级，获得了" ' + window.shareGameResults.scorcesName + '" 的称号，不服来solo！！！', // 分享描述
       link: 'http://wechat.hisihi.com/Sample/sample.php', // 分享链接
-      imgUrl: ''http://wechat.hisihi.com/Sample/area/images/home/shareLogo.png', // 分享图标
+      imgUrl: 'http://wechat.hisihi.com/Sample/area/images/home/shareLogo.png', // 分享图标
       type: 'link', // 分享类型,music、video或link，不填默认为link
       dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
       success: function () {
