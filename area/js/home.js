@@ -2,6 +2,11 @@
 
 $(function () {
     game.initialize(allQuestionsArr);
+    window.shareGameResults = {
+        totalScores: 5111,     //总分
+        scorcesName: '苍老湿11',//称号
+        levelName: 'SSS11',  //等级名称
+    };
 });
 
 /*游戏对象*/
@@ -14,8 +19,8 @@ var game = {
     timeInterval: null,
     questionsArr: [],
     answersArr: [],  //答题情况  预留的
+
     totalScores: 5,  //总分
-    scorcesName: '苍老湿',//称号
 
     /*连击情况*/
     doubleHitNums: 0,
@@ -341,7 +346,10 @@ var game = {
             return item.max >= totalScores && item.min <= totalScores;
         })[0];
         baseScore = levelsItem.min;  //设计滚动时的最小数
-        this.scorcesName = levelsItem.scorcesName;
+
+        window.shareGameResults.scorcesName = levelsItem.scorcesName;
+        window.shareGameResults.levelName = levelsItem.name;
+        window.shareGameResults.totalScores = totalScores;
 
         if (totalScores > 1000 && totalScores - baseScore <= 250) {
             baseScore = totalScores - 250;
