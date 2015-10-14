@@ -478,6 +478,11 @@ app.controller('gameRecordsController', function ($scope, $http) {
         $p.hide();
     }
     $scope.items = data;
+
+    $scope.$watch('name', function (newValue, oldValue, scope) {
+
+    });
+
 });
 
 function compare(val1, val2) {
