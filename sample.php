@@ -8,7 +8,7 @@ $signPackage = $jssdk->GetSignPackage();
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width ,initial-scale=1.0,maximum-scale=1.0,user-scalable=0;" />
-    <title>轰炸设计师</title>
+    <title>轰炸设计师opa</title>
 	<link href="area/css/home.css" rel="stylesheet/less" />
     <script src="area/js/jquery-1.8.2.min.js"></script>
     <script src="area/js/angular.min.js"></script>
