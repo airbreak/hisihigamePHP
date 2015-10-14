@@ -102,7 +102,7 @@ $signPackage = $jssdk->GetSignPackage();
    * 邮件内容说明：用简明的语言描述问题所在，并交代清楚遇到该问题的场景，可附上截屏图片，微信团队会尽快处理你的反馈。
    */
   wx.config({
-    debug: true,
+    debug: false,
     appId: '<?php echo $signPackage["appId"];?>',
     timestamp: <?php echo $signPackage["timestamp"];?>,
     nonceStr: '<?php echo $signPackage["nonceStr"];?>',
@@ -113,23 +113,18 @@ $signPackage = $jssdk->GetSignPackage();
     ]
   });
   wx.ready(function () {
-    // 在这里调用 API
-    wx.checkJsApi({
-      jsApiList: ['chooseImage','onMenuShareAppMessage'], // 需要检测的JS接口列表，所有JS接口列表见附录2,
-      success: function(res) {
-        // 以键值对的形式返回，可用的api值true，不可用为false
-        // 如：{"checkResult":{"chooseImage":true},"errMsg":"checkJsApi:ok"}
-        alert(res);
-      }
-    });
+    // 在这里调用 APIs
     wx.onMenuShareAppMessage({
       title: '轰炸设计师', // 分享标题
-      desc: '我得到了 '+game.totalScores+' 分，获得 <b>'+game.scorcesName+' </b>称号,轰炸设计师,快来试试', // 分享描述
+      desc: '我得到了 '+game.totalScores+' 分，获得 '+game.scorcesName+' 称号,轰炸设计师,快来试试', // 分享描述
       link: 'http://wechat.hisihi.com/Sample/sample.php', // 分享链接
       imgUrl: '', // 分享图标
       type: 'link', // 分享类型,music、video或link，不填默认为link
       dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
       success: function () {
+		alert(game);
+		alert(game.totalScores);
+		alert(game.scorcesName);
         // 用户确认分享后执行的回调函数
         alert('分享成功');
       },
@@ -138,18 +133,11 @@ $signPackage = $jssdk->GetSignPackage();
         alert('取消');
       }
     });
-    wx.getNetworkType({
-      success: function (res) {
-        var networkType = res.networkType; // 返回网络类型2g，3g，4g，wifi
-        alert(networkType+'Hello');
-      }
-    });
   });
 
 /*  weixin://contacts/profile/wxe567cacaccd3a88f*/
 
   wx.error(function(res){
-    alert('failed');
     // config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。
   });
 

@@ -14,8 +14,8 @@ var game = {
     timeInterval: null,
     questionsArr: [],
     answersArr: [],  //答题情况  预留的
-    totalScores: 0,  //总分
-    scorcesName: '',//称号
+    totalScores: 5,  //总分
+    scorcesName: '苍老湿',//称号
 
     /*连击情况*/
     doubleHitNums: 0,
